@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +13,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tasks');
 });
+
+Route::get('task', 'TaskController@postTask')->name('postTask');
