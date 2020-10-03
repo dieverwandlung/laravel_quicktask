@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('tasks');
-});
-
-Route::get('task', 'TaskController@postTask')->name('postTask');
+Route::resource('tasks', 'TaskController', ['except' => 
+    'create', 'show'
+]);
